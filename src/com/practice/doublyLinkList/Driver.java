@@ -1,11 +1,10 @@
-package com.practice.singlyLinkList;
-
-import java.util.ArrayList;
+package com.practice.doublyLinkList;
 
 public class Driver {
 
     public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
+
+        DoublyLinkedList list = new DoublyLinkedList();
 
         list.insertAtLast(list, 1);
         list.insertAtLast(list, 8);
@@ -13,7 +12,7 @@ public class Driver {
         list.insertAtLast(list, 6);
         list.insertAtLast(list, 7);
         list.insertAtFirst(list, 2);
-        list.deleteLastNode(list);
+//        list.deleteLastNode(list);
 
         list.printList(list);
         System.out.println(list.length(list));
