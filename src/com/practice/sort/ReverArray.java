@@ -1,4 +1,4 @@
-package com.practice.doublyLinkList;
+package com.practice.sort;
 
 import java.util.Arrays;
 

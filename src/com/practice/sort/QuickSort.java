@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class QuickSort {
 
+    public static void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
     public static int[] quickSort(int[] arr, int start, int end) {
         if(start >= end) {
             return arr;
@@ -16,17 +22,13 @@ public class QuickSort {
         for(int i= start; i<end; i++) {
             // Swap the items if value is more than pivot value
             if(arr[i] < pivotValue) {
-                int temp = arr[i];
-                arr[i] = arr[pivotIndex];
-                arr[pivotIndex] = temp;
+                swap(arr, i, pivotIndex);
                 pivotIndex++;  // Increment pivot index
             }
         }
 
         // Swap the pivot element
-        int temp = arr[end-1];
-        arr[end-1] = arr[pivotIndex];
-        arr[pivotIndex] = temp;
+        swap(arr, end-1, pivotIndex);
 
         quickSort(arr, start, pivotIndex);
         quickSort(arr, pivotIndex+1, end);
