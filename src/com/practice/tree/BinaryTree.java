@@ -1,6 +1,9 @@
 package com.practice.tree;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
     TreeNode root;
@@ -65,6 +68,30 @@ public class BinaryTree {
         postOrderRec(root.getLeft());
         postOrderRec(root.getRight());
         System.out.print(root.getData() + " ");
+    }
+
+    // Level order
+    public void  levelOrder() {
+        levelOrderRec(root);
+    }
+
+    private void levelOrderRec(TreeNode root) {
+        if(root == null) return;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root); // add root element to queue to start with
+
+        while(!queue.isEmpty()) {
+            TreeNode current = queue.poll();
+            System.out.print(current.getData() + " ");
+            // Add all left childern
+            if(current.getLeft() != null) {
+                queue.add(current.getLeft());
+            }
+            // Add all right children
+            if(current.getRight() != null) {
+                queue.add(current.getRight());
+            }
+        }
     }
 
 }

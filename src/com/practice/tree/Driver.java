@@ -23,5 +23,9 @@ public class Driver {
         System.out.println();
         System.out.println("Post order:");
         tree.postOrder();
+
+        System.out.println();
+        System.out.println("Levl order:");
+        tree.levelOrder();
     }
 }
